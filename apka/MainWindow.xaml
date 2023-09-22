@@ -1,0 +1,79 @@
+﻿<Window x:Class="apka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:apka"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid KeyDown="Grid_KeyDown">
+        <Button Content="Create beam" HorizontalAlignment="Left" Margin="281,301,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="177" Height="58" Click="Button_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.515"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox x:Name="textBoxPatro" HorizontalAlignment="Left" Margin="118,52,0,0" TextWrapping="Wrap" Text="Výška patra" VerticalAlignment="Top" Width="120" AutomationProperties.Name="textBoxPatro"/>
+        <TextBox x:Name="textBoxPocetSvicek" HorizontalAlignment="Left" Margin="118,85,0,0" TextWrapping="Wrap" Text="Počet svíček" VerticalAlignment="Top" Width="120" AutomationProperties.Name="textBoxPocetSvicek"/>
+        <TextBox x:Name="textBoxPocetVrstev" HorizontalAlignment="Left" Margin="118,128,0,0" TextWrapping="Wrap" Text="Počet vrstev" VerticalAlignment="Top" Width="120" AutomationProperties.Name="textBoxPocetVrstev"/>
+        <Label Content="Pozice dotru na pracovní ploše" HorizontalAlignment="Left" Margin="121,247,0,0" VerticalAlignment="Top" Height="26" Width="182"/>
+        <TextBox x:Name="textBoxPoziceX" HorizontalAlignment="Left" Margin="133,289,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="126" AutomationProperties.Name="textBoxPoziceX" Height="19"/>
+        <TextBox x:Name="textBoxPoziceY" HorizontalAlignment="Left" Margin="133,324,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="126" AutomationProperties.Name="textBoxPoziceY" Height="18"/>
+        <TextBox x:Name="textBoxPoziceZ" HorizontalAlignment="Left" Margin="133,368,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="126" AutomationProperties.Name="textBoxPoziceZ" Height="18"/>
+        <Label Content="Pozice X" HorizontalAlignment="Left" Margin="70,285,0,0" VerticalAlignment="Top" Height="27" Width="57"/>
+        <Label Content="Pozice Y" HorizontalAlignment="Left" Margin="71,320,0,0" VerticalAlignment="Top" Height="26" Width="57"/>
+        <Label Content="Pozice Z (default 0)" HorizontalAlignment="Left" Margin="10,364,0,0" VerticalAlignment="Top" Height="26" Width="117"/>
+        <CheckBox x:Name="checkBoxRounded" Content="Chci kulatý dort" HorizontalAlignment="Left" Margin="118,193,0,0" VerticalAlignment="Top" AutomationProperties.Name="checkBoxRounded"/>
+        <Button x:Name="buttonSnake" Content="Snake" HorizontalAlignment="Left" Margin="434,147,0,0" VerticalAlignment="Top" Height="57" Width="168" AutomationProperties.Name="buttonSnake" Click="buttonSnake_Click_1"/>
+        <Button x:Name="buttonSnakeStop" Content="Zastavit hada" HorizontalAlignment="Left" Margin="621,147,0,0" VerticalAlignment="Top" Height="57" Width="126" AutomationProperties.Name="buttonSnakeStop" Click="buttonSnakeStop_Click"/>
+        <Label x:Name="labelTrue" Content="True: " HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top" AutomationProperties.Name="labelTrue"/>
+        <Button x:Name="buttonSnakeUp" Content="Up" HorizontalAlignment="Left" Margin="586,234,0,0" VerticalAlignment="Top" Height="33" Width="67" RenderTransformOrigin="0.5,0.5" AutomationProperties.Name="buttonSnakeUp" Click="buttonSnakeUp_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.322"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="buttonSnakeRight" Content="Pravá" HorizontalAlignment="Left" Margin="653,272,0,0" VerticalAlignment="Top" Height="33" Width="67" RenderTransformOrigin="0.5,0.5" AutomationProperties.Name="buttonSnakeRight" Click="buttonSnakeRight_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.322"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="buttonSnakeLeft" Content="Levá" HorizontalAlignment="Left" Margin="518,272,0,0" VerticalAlignment="Top" Height="33" Width="67" RenderTransformOrigin="0.5,0.5" AutomationProperties.Name="buttonSnakeLeft" Click="buttonSnakeLeft_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.322"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="buttonSnakeDown" Content="Down" HorizontalAlignment="Left" Margin="586,311,0,0" VerticalAlignment="Top" Height="33" Width="67" RenderTransformOrigin="0.5,0.5" AutomationProperties.Name="buttonSnakeDown" Click="buttonSnakeDown_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.322"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Random bod" HorizontalAlignment="Left" Margin="417,52,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Label x:Name="labelPoints" Content="Počet bodů:" HorizontalAlignment="Left" Margin="554,52,0,0" VerticalAlignment="Top" AutomationProperties.Name="labelPoints"/>
+        <TextBox x:Name="textBoxPoints" HorizontalAlignment="Left" Margin="632,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" AutomationProperties.Name="textBoxPoints"/>
+
+    </Grid>
+</Window>
